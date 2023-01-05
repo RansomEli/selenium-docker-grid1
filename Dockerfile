@@ -1,5 +1,5 @@
-FROM openjdk:8u212-jre-alpine3.9
-
+# FROM openjdk:8u212-jre-alpine3.9
+FROM amazoncorretto:8u312-alpine3.13-jre
 RUN apk add curl jq
 
 # Workspace
@@ -20,7 +20,7 @@ ADD target/libs 						libs
 
 # ADD suite files
 ADD book-flight-module.xml				book-flight-module.xml
-ADD search-module.xml					search-module.xml
+ADD search-aaca.xml					    search-aaca.xml
 
 # ADD health check script
 ADD healthcheck.sh                      healthcheck.sh
